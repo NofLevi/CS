@@ -10,24 +10,22 @@ namespace hayo_example
     {
         static void Main(string[] args)
         {
-            int[,] mat = new int[3, 7];
+            int[,] mat = new int[,]
+            {
+                { 1,2,3,4,5,6,7},
+                { 5,6,8,3,1,2,8},
+                { 9,5,3,2,7,5,3}
+            }; 
             int[] avg_per_day = new int[7];
             int avg = 0;
             
-            for(int i = 0; i < 3;i++) //getting the information of the amount per day
-            {
-                for(int j = 0; j < 7; j++)
-                {
-                    mat[i,j] = Convert.ToInt32(Console.ReadLine());
-                }
-            }
-
 
             for(int j = 0;j<7;j++) // getting the avg per day
             {
                 avg_per_day[j] = 0;
                 for(int i = 0;i<3;i++)
                 {
+
                     avg_per_day[j] = mat[i,j];
                 }
                 avg_per_day[j] /= 3;
@@ -45,9 +43,11 @@ namespace hayo_example
             {
                 if(avg_per_day[i]>avg)
                 {
-                    Console.WriteLine("Day Number:%d his above average",i+1);
+                    Console.WriteLine("Day Number:"+ (i+1) +"his above average");
                 }
             }
+
+            Console.ReadLine();
         }
     }
 }
