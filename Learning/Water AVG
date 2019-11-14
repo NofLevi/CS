@@ -1,0 +1,53 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace hayo_example
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int[,] mat = new int[3, 7];
+            int[] avg_per_day = new int[7];
+            int avg = 0;
+            
+            for(int i = 0; i < 3;i++) //getting the information of the amount per day
+            {
+                for(int j = 0; j < 7; j++)
+                {
+                    mat[i,j] = Convert.ToInt32(Console.ReadLine());
+                }
+            }
+
+
+            for(int j = 0;j<7;j++) // getting the avg per day
+            {
+                avg_per_day[j] = 0;
+                for(int i = 0;i<3;i++)
+                {
+                    avg_per_day[j] = mat[i,j];
+                }
+                avg_per_day[j] /= 3;
+            }
+
+
+            for(int i = 0;i<7;i++)//getting the general avg
+            {
+                avg += avg_per_day[i];
+            }
+            avg /= 7;
+
+
+            for(int i = 0;i<7;i++)
+            {
+                if(avg_per_day[i]>avg)
+                {
+                    Console.WriteLine("Day Number:%d his above average",i+1);
+                }
+            }
+        }
+    }
+}
