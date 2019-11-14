@@ -1,0 +1,33 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace hayo_example
+{
+    class Program
+    {
+        public static int MaxTwo(int x,int y)
+        {
+            if (x > y)
+                return x;
+            return y;
+        }
+
+        public static int MaxThree(int x, int y, int z)
+        {
+            int max = 0;
+            max = MaxTwo(x, y);
+            max = MaxTwo(max, z);
+            return max;
+        }
+
+        static void Main(string[] args)
+        {
+            int x = 3, y = 2, z = 1;
+            Console.WriteLine(MaxThree(x, y, z));
+            Console.ReadLine();
+        }
+    }
+}
