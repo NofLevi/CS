@@ -1,0 +1,32 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp1
+{
+    class Point
+    {
+        private double x;
+        private double y;
+
+        public Point(double x, double y)
+        {
+            this.X = x;
+            this.Y = y;
+        }
+
+        public double X { get => x; set => x = value; }
+        public double Y { get => y; set => y = value; }
+
+        public double Dis(Point p2)
+        {
+            double a = this.y - p2.Y;
+            double b = this.x - p2.X;
+            a = Math.Pow(a, 2);
+            b = Math.Pow(b, 2);
+            return (Math.Sqrt(a + b));
+        }
+    }
+}
