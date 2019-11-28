@@ -1,0 +1,27 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace DiceProject
+{
+    class DiceGame
+    {
+        static void Main(string[] args)
+        {
+            Dice dice = new Dice();
+            int Number_Of_Throws = 0;
+            int Sum = 0;
+            
+            while(Sum != 12)
+            {
+                dice.Roll();
+                Number_Of_Throws += 1;
+                Sum = dice.GetNum1() + dice.GetNum2();
+                Console.WriteLine("The Dices are:" + dice.GetNum1() + ":" + dice.GetNum2() );
+            }
+            Console.WriteLine("The Dices are 6:6 GZ after:" + Number_Of_Throws + " Tries");  
+        }
+    }
+}
