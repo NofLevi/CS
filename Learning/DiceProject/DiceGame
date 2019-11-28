@@ -21,7 +21,8 @@ namespace DiceProject
                 Sum = dice.GetNum1() + dice.GetNum2();
                 Console.WriteLine("The Dices are:" + dice.GetNum1() + ":" + dice.GetNum2() );
             }
-            Console.WriteLine("The Dices are 6:6 GZ after:" + Number_Of_Throws + " Tries");  
+            Console.WriteLine("The Dices are 6:6 GZ after:" + Number_Of_Throws + " Tries");
+            Console.ReadLine();
         }
     }
 }
