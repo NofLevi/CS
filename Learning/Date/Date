@@ -1,0 +1,58 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp1
+{
+    class Date
+    {
+        private int _day;
+        private int _month;
+        private int _year;
+
+        public Date(int day,int month,int year)
+        {
+            _day = day;
+            _month = month;
+            _year = year;
+        }
+
+        
+        public int GetYear()
+        {
+            return _year;
+        }
+
+        public int GetMonth()
+        {
+            return _month;
+        }
+
+        public int GetDay()
+        {
+            return _day;
+        }
+
+        void SetYear(int yearToSet)
+        {
+            _year = yearToSet;
+        }
+
+        void SetMonth(int monthToSet)
+        {
+            _month = monthToSet;
+        }
+
+        void SetDay(int dayToSet)
+        {
+            _day = dayToSet;
+        }
+
+        int CompareTo(Date other)
+        {
+
+        }
+    }
+}
