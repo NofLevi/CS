@@ -1,0 +1,28 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp2
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Rational rat1 = new Rational(2,4);
+            Rational rat2 = new Rational(6, 4);
+
+            //1.  +  with shvarim [kefel be azlava]
+            int newnume = rat1.GetNumerator() * rat2.GetDenom();
+            int newdeno = rat2.GetNumerator() * rat1.GetDenom();
+            Console.WriteLine("First Rational + Second Rartional are equal too:" + newnume + "/" + newdeno);
+            double addrat = Convert.ToDouble(newnume) / Convert.ToDouble(newdeno);
+            Console.WriteLine("Who equal too:" + addrat);
+
+            //program testing
+            Rational rat3 = new Rational(2, 0); //check if u enter denom who equal 0
+            Console.WriteLine(rat1.IsEqual(rat2)); //check if they are equal
+        }
+    }
+}
