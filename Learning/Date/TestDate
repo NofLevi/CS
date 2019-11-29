@@ -24,7 +24,7 @@ namespace ConsoleApp1
 
             Console.WriteLine(date1.TooString());
 
-
+            Console.ReadLine();
         }
     }
 }
