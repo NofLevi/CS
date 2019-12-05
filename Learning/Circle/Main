@@ -1,0 +1,20 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Circle m1 , m2;
+            Points p1 = new Points(1, 2);
+            Points p2 = new Points(1, 5);
+            double rad1 = 5, rad2 = 10;
+
+        }
+    }
+}
