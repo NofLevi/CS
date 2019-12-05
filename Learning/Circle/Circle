@@ -1,0 +1,40 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp1
+{
+    class Circle
+    {
+        double _field;
+        double _rad;
+        Points _mid;
+
+        public Circle(Points mid,double rad)
+        {
+            _mid = mid;
+            _rad = rad;
+        }
+
+        public Circle(int x,int y,double rad)
+        {
+            _mid.Setter(x, y);
+            _rad = rad;
+        }
+
+        public Circle(Circle circle) //copycat
+        {
+            _rad = circle.GetRad();
+            _mid.Setter(circle.GetX(), circle.GetY());
+        }
+
+        
+        public double GetRad() {return _rad;}
+
+        public int GetX() { return _mid.GetterX(); }
+
+        public int GetY() { return _mid.GetterY(); }
+    }
+}
