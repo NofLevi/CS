@@ -19,36 +19,17 @@ namespace ConsoleApp1
             _year = year;
         }
 
-        
-        public int GetYear()
-        {
-            return _year;
-        }
+        public int GetYear(){return _year;}
 
-        public int GetMonth()
-        {
-            return _month;
-        }
+        public int GetMonth(){return _month;}
 
-        public int GetDay()
-        {
-            return _day;
-        }
+        public int GetDay(){return _day;}
 
-        void SetYear(int yearToSet)
-        {
-            _year = yearToSet;
-        }
+        void SetYear(int yearToSet){_year = yearToSet; }
 
-        void SetMonth(int monthToSet)
-        {
-            _month = monthToSet;
-        }
+        void SetMonth(int monthToSet){_month = monthToSet;}
 
-        void SetDay(int dayToSet)
-        {
-            _day = dayToSet;
-        }
+        void SetDay(int dayToSet){_day = dayToSet;}
 
         int CompareTo(Date other)
         {
