@@ -9,6 +9,7 @@ namespace ConsoleApp1
     class Circle
     {
         double _field;
+        double _hekef;
         double _rad;
         Points _mid;
 
@@ -36,5 +37,9 @@ namespace ConsoleApp1
         public int GetX() { return _mid.GetterX(); }
 
         public int GetY() { return _mid.GetterY(); }
+
+        public double Field() { return Math.PI * (_rad * _rad); }
+
+        public double Hekef() { return 2 * Math.PI * _rad};
     }
 }
