@@ -17,12 +17,16 @@ namespace ConsoleApp1
         {
             _mid = mid;
             _rad = rad;
+            _field = Math.PI * (_rad * _rad);
+            _hekef = 2 * Math.PI * _rad;
         }
 
         public Circle(int x,int y,double rad)
         {
             _mid.Setter(x, y);
             _rad = rad;
+            _field = Math.PI * (_rad * _rad);
+            _hekef = 2 * Math.PI * _rad;
         }
 
         public Circle(Circle circle) //copycat
@@ -38,8 +42,19 @@ namespace ConsoleApp1
 
         public int GetY() { return _mid.GetterY(); }
 
-        public double Field() { return Math.PI * (_rad * _rad); }
+        public double GetField() { return _field; }
 
-        public double Hekef() { return 2 * Math.PI * _rad};
+        public double GetHekef() { return _hekef; }
+
+        public int CompareTo(Circle circle)
+        {
+            if (_field > circle.GetField())
+                return 1;
+
+            else if (_field == circle.GetField())
+                return 0;
+            return -1;
+        }
     }
 }
+
