@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConsoleApp1
+namespace ConsoleApp1123
 {
     class Date
     {
@@ -12,33 +12,40 @@ namespace ConsoleApp1
         private int _month;
         private int _year;
 
-        public Date(int day,int month,int year)
+        public Date(int day, int month, int year)
         {
             _day = day;
             _month = month;
             _year = year;
         }
 
-        public int GetYear(){return _year;}
-
-        public int GetMonth(){return _month;}
-
-        public int GetDay(){return _day;}
-
-        void SetYear(int yearToSet){_year = yearToSet; }
-
-        void SetMonth(int monthToSet){_month = monthToSet;}
-
-        void SetDay(int dayToSet){_day = dayToSet;}
-
-        int CompareTo(Date other)
+        public Date(Date date)
         {
-            if(_year > other.GetYear())
+            _day = date.GetDay();
+            _month = date.GetMonth();
+            _year = date.GetYear();
+        }
+
+        public int GetYear() { return _year; }
+
+        public int GetMonth() { return _month; }
+
+        public int GetDay() { return _day; }
+
+        public void SetYear(int yearToSet) { _year = yearToSet; }
+
+        public void SetMonth(int monthToSet) { _month = monthToSet; }
+
+        public void SetDay(int dayToSet) { _day = dayToSet; }
+
+        public int CompareTo(Date other)
+        {
+            if (_year > other.GetYear())
             {
                 return 1;
             }
 
-            else if(_year < other.GetYear())
+            else if (_year < other.GetYear())
             {
                 return -1;
             }
@@ -48,23 +55,23 @@ namespace ConsoleApp1
                 return 1;
             }
 
-            else if(_month < other.GetMonth())
+            else if (_month < other.GetMonth())
             {
                 return -1;
             }
 
-            if(_day > other.GetDay())
+            if (_day > other.GetDay())
             {
                 return 1;
             }
 
-            else if(_day < other.GetDay())
+            else if (_day < other.GetDay())
             {
                 return -1;
             }
 
             return 0;
-            
+
         }
 
         string ToString()
