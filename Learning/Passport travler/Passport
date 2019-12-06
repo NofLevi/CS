@@ -10,48 +10,41 @@ namespace ConsoleApp1123
     {
         private string _name;
         private int _number;
-        private DateTime _expiryDate;
-        public Passport(string name,int number,DateTime expiryDate)
+        private Date _expiryDate;
+        public Passport(string name, int number, Date expiryDate)
         {
             _name = name;
             _number = number;
             _expiryDate = expiryDate;
         }
 
-        public string GetName() { return _name; }
-        public int GetNum() { return _number; }
-        public DateTime GetExpiryDate() { return _expiryDate; }
-
-        public void copy(Passport pass)
+        public Passport(Passport pass)
         {
             _name = pass.GetName();
             _number = pass.GetNum();
-            _expiryDate = pass.GetExpiryDate();
+            _expiryDate = new Date(pass._expiryDate);
         }
+
+        public string GetName() { return _name; }
+        public int GetNum() { return _number; }
+        public Date GetExpiryDate() { return _expiryDate; }
 
         public string ToString()
         {
-            return "Name: "+_name+ "\nPass.num: " + _number + "\nExp Date: " +_expiryDate +; 
+            return "Name: "+_name+ "\nPass.num: " + _number + "\nExp Date: " +_expiryDate; 
         }
 
-        public bool IsValid(DateTime dateChecked)
+        public bool IsValid(Date dateChecked)
         {
-            if (_expiryDate.Year < dateChecked.Year)
+            if (_expiryDate.CompareTo(dateChecked) < 0)
                 return true;
-
-            if (_expiryDate.Year == dateChecked.Year && _expiryDate.Month < dateChecked.Month)
-                return true;
-
-            if (_expiryDate.Year == dateChecked.Year && _expiryDate.Month == dateChecked.Month && _expiryDate.Day < dateChecked.Day)
-                return true;
-
             return false;
+
         }
 
-        public void SetExpiryDate(DateTime newexpiry)
+        public void SetExpiryDate(Date newexpiry)
         {
             _expiryDate = newexpiry;
         }
     }
 }
-
