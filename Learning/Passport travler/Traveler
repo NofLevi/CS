@@ -17,6 +17,15 @@ namespace ConsoleApp1123
             _haspaid = haspaid;
         }
 
+        public Traveler()
+        {
+        }
+
+        public Passport GetPassport()
+        {
+            return _passport;
+        }
+
         public void Pay()
         {
             _haspaid = true;
@@ -29,11 +38,10 @@ namespace ConsoleApp1123
             return false;
         }
 
-        public string ToString()
+        public override string ToString()
         {
             return _passport.ToString() + "\nHas Paid: " + _haspaid;
 
         }
     }
 }
-
