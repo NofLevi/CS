@@ -25,18 +25,28 @@ namespace ConsoleApp1123
             _expiryDate = new Date(pass._expiryDate);
         }
 
+        public Passport()
+        {
+        }
+
         public string GetName() { return _name; }
         public int GetNum() { return _number; }
         public Date GetExpiryDate() { return _expiryDate; }
+        public void SetName(string name) { _name = name; }
+        public void SetNum(int num) { _number = num; }
+        public void SetDate(int day,int month,int year)
+        {
+            _expiryDate = new Date(day, month, year);
+        }
 
-        public string ToString()
+        public override string ToString()
         {
             return "Name: "+_name+ "\nPass.num: " + _number + "\nExp Date: " +_expiryDate; 
         }
 
         public bool IsValid(Date dateChecked)
         {
-            if (_expiryDate.CompareTo(dateChecked) < 0)
+            if (_expiryDate.CompareTo(dateChecked) > 0)
                 return true;
             return false;
 
@@ -48,3 +58,4 @@ namespace ConsoleApp1123
         }
     }
 }
+
