@@ -26,6 +26,10 @@ namespace ConsoleApp1123
             _year = date.GetYear();
         }
 
+        public Date()
+        {
+        }
+
         public int GetYear() { return _year; }
 
         public int GetMonth() { return _month; }
@@ -74,7 +78,7 @@ namespace ConsoleApp1123
 
         }
 
-        string ToString()
+        public override string ToString()
         {
             string st = "<" + _day + ">.<" + +_month + ">.<" + _year + ">";
             return st;
