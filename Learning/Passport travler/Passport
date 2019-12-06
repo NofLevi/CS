@@ -31,7 +31,7 @@ namespace ConsoleApp1123
 
         public string ToString()
         {
-            return "Name: <"+_name+ ">\n<Pass.num:" + _number + ">\n<Exp Date: <" +_expiryDate + ">"; 
+            return "Name: "+_name+ "\nPass.num: " + _number + "\nExp Date: " +_expiryDate +; 
         }
 
         public bool IsValid(DateTime dateChecked)
@@ -54,3 +54,4 @@ namespace ConsoleApp1123
         }
     }
 }
+
