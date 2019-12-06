@@ -10,13 +10,41 @@ namespace ConsoleApp1123
     {
         static void Main(string[] args)
         {
-            Date date1 = new Date(1, 2, 3);
-            Date date2 = new Date(5, 6, 7);
-            Passport pass1 = new Passport("asd", 5, date1);
-            Passport pass2 = new Passport(pass1);
-            pass1.SetExpiryDate(date2);
-            Console.WriteLine(pass1.GetExpiryDate().GetDay());
-            Console.WriteLine(pass2.GetExpiryDate().GetDay());
+            Date[] date = new Date[2];
+            Date today = new Date(1, 7, 2008);
+            Passport[] pass = new Passport[2];
+            Traveler[] trav = new Traveler[2];
+            for (int i = 0; i < 2; i++)
+            {
+                date[i] = new Date();
+                pass[i] = new Passport();
+                trav[i] = new Traveler();
+            }
+
+
+            for(int i = 0; i < 2; i++)
+            {
+                int day, month, year;
+                Console.WriteLine("Travler Number:"+(i + 1));
+                Console.WriteLine("Enter Name: ");
+                pass[i].SetName(Console.ReadLine());
+                Console.WriteLine("Enter number:");
+                pass[i].SetNum(Int32.Parse(Console.ReadLine()));
+                Console.WriteLine("Enter Day,Month,Year:");
+                day = Int32.Parse(Console.ReadLine());
+                month = Int32.Parse(Console.ReadLine());
+                year = Int32.Parse(Console.ReadLine());
+                pass[i].SetDate(day, month, year);
+                trav[i] = new Traveler(pass[i], true);
+            }
+
+            for(int i = 0; i < 2; i++)
+            {
+                if (trav[i].GetPassport().IsValid(today) && trav[i].HasPaid())
+                    Console.WriteLine("\nTraveler number:" + (i + 1) + " allowed to travel.\n");
+            }
+
         }
     }
 }
+
