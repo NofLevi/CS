@@ -1,0 +1,30 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp1
+{
+    class Parent
+    {
+        private string _name;
+        private string _cellNum;
+
+        public Parent(string name, string cellnum)
+        {
+            _name = name;
+            _cellNum = cellnum;
+        }
+
+        public Parent(Parent parent)
+        {
+            _name = parent.GetName();
+            _cellNum = parent.GetCellNum();
+        }
+
+        public string GetName() { return _name;}
+        public string GetCellNum() { return _cellNum; }
+        public void SetCellNum(string num) { _cellNum = num; }
+    }
+}
