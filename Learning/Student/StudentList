@@ -1,0 +1,73 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp1
+{
+    class StudentList
+    {
+        const int max = 40;
+        Student[] list = new Student[max];
+
+        public StudentList()
+        {
+            int pos = -1;
+            for(int i = 0; i< 40;i++) // making a allocation per student
+            {
+                pos++;
+                list[i] = new Student();
+            }
+        }
+
+        public void Add(Student st)
+        {
+            for(int i = 0; i < 40;i++)
+            {
+                if (list[i].GetName() == "null")
+                {
+                    Console.WriteLine("Enter your name:");
+                    string name = Console.ReadLine();
+                    Console.WriteLine("Enter your phone number:");
+                    string phonenum = Console.ReadLine();
+                    Console.WriteLine("Enter your parent Name + Phone Num:");
+                    string parentname = Console.ReadLine();
+                    string parentphone= Console.ReadLine();
+                    Parent parent = new Parent(parentname, parentphone);
+                    list[i] = new Student(name, phonenum, parent);
+                    break;
+                }
+            }
+
+        }
+
+        public Student Del(string name) // why STUDENT ?
+        {
+            for(int i = 0; i < 40; i++)
+            {
+                if (list[i].GetName() == name)
+                {
+                    list[i].SetName("null"); 
+                }
+                Console.WriteLine(name + " Deleted");
+            }
+        }
+
+        public Student GetStudent(string name)
+        {
+            for(int i = 0; i < 40; i++)
+            {
+                if(list[i].GetName() == name)
+                {
+                    return list[i];
+                }
+            }
+        }
+
+        public string ToString()
+        {
+
+        }
+    }
+}
