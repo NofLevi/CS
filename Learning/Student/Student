@@ -1,0 +1,39 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp1
+{
+    class Student
+    {
+        private string _name;
+        private string _phoneNum;
+        private Parent _parent;
+
+        public Student(string name, string phoneNum, Parent parent)
+        {
+            _name = name;
+            _phoneNum = phoneNum;
+            _parent = new Parent(parent);
+        }
+
+        public Student()
+        {
+            _name = "null";
+            _phoneNum = "0";
+        }
+
+        public string GetName() { return _name; }
+        public string GetPhoneNum() { return _phoneNum; }
+        public void SetPhoneNum(string phoneNum) { _phoneNum = phoneNum; }
+        public void SetName(string name) { _name = name; }
+        public Parent GetParent() { return _parent; }
+        public void SetParent(string name,string phonenum)
+        {
+            _parent = new Parent(name, phonenum);
+        }
+
+    }
+}
