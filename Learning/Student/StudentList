@@ -27,19 +27,11 @@ namespace ConsoleApp1
             {
                 if (list[i].GetName() == "null")
                 {
-                    Console.WriteLine("Enter your name:");
-                    string name = Console.ReadLine();
-                    Console.WriteLine("Enter your phone number:");
-                    string phonenum = Console.ReadLine();
-                    Console.WriteLine("Enter your parent Name + Phone Num:");
-                    string parentname = Console.ReadLine();
-                    string parentphone = Console.ReadLine();
-                    Parent parent = new Parent(parentname, parentphone);
-                    list[i] = new Student(name, phonenum, parent);
+                    list[i] = new Student(st);
                     break;
                 }
             }
-
+            Console.WriteLine("The class is full try to remove a student");
         }
 
         public void Del(string name) // why STUDENT ?
@@ -71,17 +63,22 @@ namespace ConsoleApp1
         {
             for(int i = 0; i < 40;i++)
             {
-                Console.WriteLine("Student List:");
-                if(list[i].GetName() != "null")
+                for (int j = i; j < 40; j++)
                 {
-                    Console.WriteLine("Name: " + list[i].GetName());
-                    Console.WriteLine("Phone number: " + list[i].GetPhoneNum());
-                    Console.WriteLine("Parent Name: " + list[i].GetParent().GetName());
-                    Console.WriteLine("Parent phone number: " + list[i].GetParent().GetCellNum();
-                    Console.WriteLine("");
+                    if (list[j].GetName() != "null" && list[i].GetName().CompareTo(list[j].GetName()) < 0)
+                    {
+                        Student temp = new Student(list[i]);
+                        list[i] = list[j];
+                        list[j] = temp;
+                    }
                 }
             }
-            return 0;
+            string st = "";
+            for(int i = 0; i < 40; i++)
+            {
+                st += list[i].GetName() + "\n";
+            }
+            return st;
         }
     }
 }
