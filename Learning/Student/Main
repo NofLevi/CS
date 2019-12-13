@@ -6,11 +6,52 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp1
 {
-    class Program
+    class Main
     {
-        static void Main(string[] args)
+        static void main(string[] args)
         {
+            StudentList sl = new StudentList();
+
+            Console.WriteLine("Options List:");
+            Console.WriteLine("1.Add Student");
+            Console.WriteLine("2.Delete Student");
+            Console.WriteLine("3.Get Student");
+            Console.WriteLine("4.Sort Students and print them");
+            int i = Convert.ToInt32(Console.ReadLine());
+
+            string name = "";
+
+            switch (i)
+            {
+                case 1:
+                    Console.WriteLine("Enter your name:");
+                    name = Console.ReadLine();
+                    Console.WriteLine("Enter your phone number:");
+                    string phonenum = Console.ReadLine();
+                    Console.WriteLine("Enter your parent Name + Phone Num:");
+                    string parentname = Console.ReadLine();
+                    string parentphone = Console.ReadLine();
+                    Parent parent = new Parent(parentname, parentphone);
+                    Student st = new Student(name, phonenum, parent);
+                    sl.Add(st);
+                    break;
+
+                case 2:
+                    Console.WriteLine("Enter Student name to remove:");
+                    name = Console.ReadLine();
+                    sl.Del(name);
+                    break;
+
+                case 3:
+                    Console.WriteLine("Enter the name of the student that u want to get info about:");
+                    name = Console.ReadLine();
+                    sl.GetStudent(name);
+                    break;
+
+                default:
+                    Console.WriteLine(sl.ToString());
+                    break;
+            }
 
         }
     }
-}
