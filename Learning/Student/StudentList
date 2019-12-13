@@ -14,7 +14,7 @@ namespace ConsoleApp1
         public StudentList()
         {
             int pos = -1;
-            for(int i = 0; i< 40;i++) // making a allocation per student
+            for (int i = 0; i < 40; i++) // making a allocation per student
             {
                 pos++;
                 list[i] = new Student();
@@ -23,7 +23,7 @@ namespace ConsoleApp1
 
         public void Add(Student st)
         {
-            for(int i = 0; i < 40;i++)
+            for (int i = 0; i < 40; i++)
             {
                 if (list[i].GetName() == "null")
                 {
@@ -33,7 +33,7 @@ namespace ConsoleApp1
                     string phonenum = Console.ReadLine();
                     Console.WriteLine("Enter your parent Name + Phone Num:");
                     string parentname = Console.ReadLine();
-                    string parentphone= Console.ReadLine();
+                    string parentphone = Console.ReadLine();
                     Parent parent = new Parent(parentname, parentphone);
                     list[i] = new Student(name, phonenum, parent);
                     break;
@@ -42,13 +42,13 @@ namespace ConsoleApp1
 
         }
 
-        public Student Del(string name) // why STUDENT ?
+        public void Del(string name) // why STUDENT ?
         {
-            for(int i = 0; i < 40; i++)
+            for (int i = 0; i < 40; i++)
             {
                 if (list[i].GetName() == name)
                 {
-                    list[i].SetName("null"); 
+                    list[i].SetName("null");
                 }
                 Console.WriteLine(name + " Deleted");
             }
@@ -56,17 +56,31 @@ namespace ConsoleApp1
 
         public Student GetStudent(string name)
         {
-            for(int i = 0; i < 40; i++)
+            for (int i = 0; i < 40; i++)
             {
-                if(list[i].GetName() == name)
+                if (list[i].GetName() == name)
                 {
                     return list[i];
                 }
             }
+            Console.WriteLine("Student Not Exist");
+            return null;
         }
 
         public override string ToString()
         {
+            for(int i = 0; i < 40;i++)
+            {
+                Console.WriteLine("Student List:");
+                if(list[i].GetName() != "null")
+                {
+                    Console.WriteLine("Name: " + list[i].GetName());
+                    Console.WriteLine("Phone number: " + list[i].GetPhoneNum());
+                    Console.WriteLine("Parent Name: " + list[i].GetParent().GetName());
+                    Console.WriteLine("Parent phone number: " + list[i].GetParent().GetCellNum();
+                    Console.WriteLine("");
+                }
+            }
             return 0;
         }
     }
