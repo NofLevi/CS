@@ -23,7 +23,7 @@ namespace ConsoleApp1
             _cellNum = parent.GetCellNum();
         }
 
-        public string GetName() { return _name;}
+        public string GetName() { return _name; }
         public string GetCellNum() { return _cellNum; }
         public void SetCellNum(string num) { _cellNum = num; }
     }
