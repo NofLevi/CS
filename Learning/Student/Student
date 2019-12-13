@@ -19,6 +19,14 @@ namespace ConsoleApp1
             _parent = new Parent(parent);
         }
 
+        public Student(Student st)
+        {
+            _name = st.GetName();
+            _phoneNum = st.GetPhoneNum();
+            _parent = new Parent(st.GetParent());
+
+        }
+
         public Student()
         {
             _name = "null";
@@ -30,7 +38,7 @@ namespace ConsoleApp1
         public void SetPhoneNum(string phoneNum) { _phoneNum = phoneNum; }
         public void SetName(string name) { _name = name; }
         public Parent GetParent() { return _parent; }
-        public void SetParent(string name,string phonenum)
+        public void SetParent(string name, string phonenum)
         {
             _parent = new Parent(name, phonenum);
         }
