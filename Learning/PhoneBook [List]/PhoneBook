@@ -1,0 +1,92 @@
+
+namespace PhoneBook
+{
+    class PhoneBook
+    {
+        List<Contact> ContList = new List<Contact>();
+        public PhoneBook()
+        {
+
+        }
+        
+        public void AddContact(string name,string phone)
+        {
+            flag = 1;
+            for (int i = 0; i < ContList.Count; i++) // checking if the name already exist
+            {
+                if(ContList._name == name)
+                {
+                    Console.WriteLine("The Name Already Exist.");
+                    flag = 0;
+                }
+            }
+            if(flag == 1)
+            {
+                ContList.Add(new Contact(name,phone));
+            }
+        }
+
+        public void DelContact(string name)
+        {
+            int i = 0;
+            for(int i = 0; i < ContList.Count; i++)
+            {
+                if(ContList[i]._name == name)
+                {
+                    ContList.RemoveAt(i);
+                }
+            }
+        }
+
+        public string GetPhone(string name)
+        {
+            for(int i = 0; i < ContList.Count; i++)
+            {
+                if(ContList[i]._name == name)
+                {
+                    return ContList[i]._phone;
+                }
+            }
+            return "The name is not exist in the system";
+        }
+
+        public string[] GetAllContactsName()
+        {
+            string[] st = new string[ContList.Count];
+            if (ContList.Count == 0)
+            {
+                return st;
+            }
+
+            for(int i = 0; i< ContList.Count; i++)
+            {
+                st[i] = ContList[i]._name ;
+            }
+            return st;
+        }
+
+        public override string ToString()
+        {
+            string st;
+            for(int i = 0; i < ContList.Count; i++)
+            {
+                for(int j = (i+1); j <ContList.Count; j++)
+                {
+                    if(ContList[i] < ContList[j])
+                    {
+                            Contact tmp = ContList[i];
+                            ContList[i] = ContList[j];
+                            ContList[j] = tmp;
+                    }
+                }
+            }
+
+            Console.WriteLine("Name:\tPhone:");
+            for(int i = 0; i < ContList.Count; i++)
+                {
+                    st += ContList[i]._name + "\t" + ContList[i]._phone + "\n";
+                }
+            return st;
+        }
+    }
+}
