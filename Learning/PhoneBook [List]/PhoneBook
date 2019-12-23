@@ -71,7 +71,7 @@ namespace PhoneBook
             {
                 for(int j = (i+1); j <ContList.Count; j++)
                 {
-                    if(ContList[i] < ContList[j])
+                    if(String.Compare(ContList[i].Name , ContList[j].Name) > 0 )
                     {
                             Contact temp = ContList[i];
                             ContList[i] = ContList[j];
