@@ -2,16 +2,12 @@ namespace PhoneBook
 {
     class Contact
     {
-        private string _name;
-        private string _phone;
+        public string Name{ get; set; }
+        private string Phone{get; set; }
         public Contact(string name,string phone)
         {
-            _name = name;
-            _phone = phone;
+            Name = name;
+            Phone = phone;
         }
-
-         public string GetName(){return _name;}
-
-        public string GetPhone(){return _phone;}
     }
 }
