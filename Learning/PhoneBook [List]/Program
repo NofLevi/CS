@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 
 namespace PhoneBook
 {
-    class Main
+    class Program
     {
         static void Main(string[] args)
         {
             PhoneBook phonebook = new PhoneBook();
-            phonebook.AddContact("hello", " 0123456789");
+            phonebook.AddContact("hello", "0123456789");
             Console.WriteLine(phonebook.ToString());
         }
     }
