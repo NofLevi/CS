@@ -3,7 +3,7 @@ namespace PhoneBook
     class Contact
     {
         public string Name{ get; set; }
-        private string Phone{get; set; }
+        public string Phone{get; set; }
         public Contact(string name,string phone)
         {
             Name = name;
