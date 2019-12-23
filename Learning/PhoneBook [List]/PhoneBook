@@ -11,7 +11,7 @@ namespace PhoneBook
         
         public void AddContact(string name,string phone)
         {
-            flag = 1;
+            int flag = 1;
             for (int i = 0; i < ContList.Count; i++) // checking if the name already exist
             {
                 if(ContList[i].Name == name)
