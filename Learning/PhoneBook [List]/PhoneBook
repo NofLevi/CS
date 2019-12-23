@@ -28,7 +28,6 @@ namespace PhoneBook
 
         public void DelContact(string name)
         {
-            int i = 0;
             for(int i = 0; i < ContList.Count; i++)
             {
                 if(ContList[i].Name == name)
