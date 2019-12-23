@@ -14,7 +14,7 @@ namespace PhoneBook
             flag = 1;
             for (int i = 0; i < ContList.Count; i++) // checking if the name already exist
             {
-                if(ContList._name == name)
+                if(ContList[i].Name == name)
                 {
                     Console.WriteLine("The Name Already Exist.");
                     flag = 0;
@@ -31,7 +31,7 @@ namespace PhoneBook
             int i = 0;
             for(int i = 0; i < ContList.Count; i++)
             {
-                if(ContList[i]._name == name)
+                if(ContList[i].Name == name)
                 {
                     ContList.RemoveAt(i);
                 }
@@ -42,9 +42,9 @@ namespace PhoneBook
         {
             for(int i = 0; i < ContList.Count; i++)
             {
-                if(ContList[i]._name == name)
+                if(ContList[i].Name == name)
                 {
-                    return ContList[i]._phone;
+                    return ContList[i].Phone;
                 }
             }
             return "The name is not exist in the system";
@@ -60,7 +60,7 @@ namespace PhoneBook
 
             for(int i = 0; i< ContList.Count; i++)
             {
-                st[i] = ContList[i]._name ;
+                st[i] = ContList[i].Name;
             }
             return st;
         }
@@ -74,9 +74,9 @@ namespace PhoneBook
                 {
                     if(ContList[i] < ContList[j])
                     {
-                            Contact tmp = ContList[i];
+                            Contact temp = ContList[i];
                             ContList[i] = ContList[j];
-                            ContList[j] = tmp;
+                            ContList[j] = temp;
                     }
                 }
             }
@@ -84,7 +84,7 @@ namespace PhoneBook
             Console.WriteLine("Name:\tPhone:");
             for(int i = 0; i < ContList.Count; i++)
                 {
-                    st += ContList[i]._name + "\t" + ContList[i]._phone + "\n";
+                    st += ContList[i].Name + "\t" + ContList[i].Phone + "\n";
                 }
             return st;
         }
