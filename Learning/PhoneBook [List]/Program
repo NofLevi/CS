@@ -12,7 +12,9 @@ namespace PhoneBook
         {
             PhoneBook phonebook = new PhoneBook();
             phonebook.AddContact("hello", "0123456789");
+            phonebook.AddContact("World", "9876543210");
             Console.WriteLine(phonebook.ToString());
+            phonebook.DelContact("hello");
         }
     }
 }
