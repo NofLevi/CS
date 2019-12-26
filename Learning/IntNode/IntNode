@@ -1,0 +1,86 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp1
+{
+    class IntNode
+    {
+        public int Info { get; set; }
+        public IntNode Next { get; set; }
+
+        int _info = 0;
+        IntNode _next;
+        
+        public IntNode(int info)
+        {
+            _info = info;
+        }
+
+        public IntNode(int info,IntNode next)
+        {
+            _info = info;
+            _next = next;
+        }
+
+        public int Sum()
+        {
+            int sum = _info;
+            if(_next == null)
+            {
+                return sum;
+            }
+
+            IntNode p = _next;
+
+            while(p != null)
+            {
+                sum += p.Info;
+                p = p.Next;
+            }
+            return sum;
+        }
+
+        public int Length()
+        {
+            IntNode p = _next;
+            int len = 1;
+            while (p != null)
+            {
+                len += 1;
+            }
+            return len;
+        }
+
+
+        public void Add(IntNode newnode)
+        {
+            if (_next == null)
+            {
+                _next = newnode;
+            }
+
+            else
+            {
+                IntNode lastnode = _next;
+                while (lastnode != null)
+                {
+                    lastnode = _next;
+                }
+                lastnode.Next = newnode;
+            }
+        }
+
+
+        public void Print(IntNode p)
+         { 
+            while(p != null)
+            {
+                p = _next;
+                Console.WriteLine("Info:" + _info);
+            }
+        }
+    }
+}
