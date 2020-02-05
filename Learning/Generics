@@ -1,0 +1,21 @@
+namespace blabla
+{
+	class MyClass<T1, T2>
+	{
+		public T1 Property1{ get; set;}
+		public T2 Property2{ get; set;}
+		public void Method(T1 p1, T2 p2)
+		{
+			
+		}
+		class Person
+		{
+			static void Main(string[] args)
+			{
+				MyClass<int, string> obj1 = new MyClass<int, string>();
+				obj1.Property1 = 10;
+				obj1.Method(10,"Check");
+			}
+		}
+	}
+}
