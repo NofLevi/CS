@@ -1,0 +1,34 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp1
+{
+    class BiDirNode<T>
+    {
+		public T info { get; set;}
+		public BiDirNode<T> next { get; set;} 
+		public BiDirNode<T> prev { get; set;} 
+		
+
+        public BiDirNode(T info, BiDirNode<T> next)
+        {
+			this.info = info;
+			this.next = next;
+        }
+
+		public BiDirNode(BiDirNode copy)
+		{
+			info = copy.info;
+			next = copy.next;
+			prev = copy.prev;
+		}
+
+        string ToString()
+        {
+			return "" + this.info;
+        }
+    }
+}
